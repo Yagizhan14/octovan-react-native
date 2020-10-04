@@ -78,7 +78,10 @@ const Passenger: React.FC<IPassengerProps> = ({
   };
 
   React.useEffect(() => {
-    getPassenger().then((res) => setPassenger(res));
+    getPassenger().then((res) => {
+      setPassenger(res);
+      setEditedPassengerName(res.name);
+    });
     setPageLoading(false);
   }, []);
 

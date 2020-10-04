@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Image } from "react-native";
 import styled from "styled-components/native";
 import { IPassenger } from "../models";
-import { Button } from "./Button";
-import { Text } from "./Text";
+import { Button, Text } from ".";
+import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
 
 interface IPassengerCardProps {
   passenger: IPassenger;
@@ -46,6 +45,12 @@ export const PassengerCard: React.FC<IPassengerCardProps> = React.memo(
           )}
           {onPressEdit && (
             <Button onPress={onPressEdit}>
+              <FontAwesomeIcons
+                color="white"
+                style={{ marginRight: 5 }}
+                size={16}
+                name="edit"
+              />
               <Text color="white" weight="bolder">
                 Edit
               </Text>
